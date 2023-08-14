@@ -1,7 +1,7 @@
 import axios from 'axios'
 // import cookie from "react-cookies";
 
-var hosturl = 'http://localhost:8000';
+var hosturl = 'http://13.36.131.2:8080';
 
 class Api{
     async getAllHosts () {
