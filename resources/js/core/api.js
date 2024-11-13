@@ -1,7 +1,7 @@
 import axios from 'axios'
 // import cookie from "react-cookies";
 
-var hosturl = 'http://13.36.131.2:8080';
+var hosturl = 'https://admin.ayekooo.com';
 // var hosturl = 'http://localhost:8001';
 
 class Api{
