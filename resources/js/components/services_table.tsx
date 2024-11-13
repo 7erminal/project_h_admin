@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import Api from './../core/api'
-import { Customers, Service, Requests, RequestNotice } from '../structs/structs'
+import { Category } from '../structs/structs'
 
 type Host = {
     host_details_id: number;
@@ -19,7 +19,7 @@ type Host = {
 }
 
 const ServicesTable: React.FC = () => {
-    const [services, setServices] = useState<Array<Service>>([]);
+    const [services, setServices] = useState<Array<Category>>([]);
 
     const allServices = ():void => {
         new Api().getAllCategories()
@@ -43,6 +43,10 @@ const ServicesTable: React.FC = () => {
         allServices();
     },[]);
 
+    const deleteCategory = (id: string)=>{
+        (document.getElementById("deletion_id") as HTMLInputElement).value = id
+    }
+
     return <div className="table-responsive m-b-40">
          <h3 className="title-5 m-b-35">Services</h3>
     <table className="table table-borderless table-data3">
@@ -51,16 +55,18 @@ const ServicesTable: React.FC = () => {
                 <th>Service Name</th>
                 <th>Service Description</th>
                 <th>Status</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
             {
-                services.map((service: Service, i: number)=>{
+                services.map((service: Category, i: number)=>{
                     // var date_ = new Date(service.).toDateString()
                     return <tr key={i}>
                         <td>{ service.service_name }</td>
                         <td>{ service.description }</td>
-                        <td>{ service.active }</td>
+                        <td>{ service.active == '1' ? 'active' : 'inactive' }</td>
+                        <td><button className='btn btn-danger' data-toggle="modal" data-target="#delete-category" onClick={()=>deleteCategory(service.service_id.toString())}>Delete</button></td>
                     </tr>
                 })
             }

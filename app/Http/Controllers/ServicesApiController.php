@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Service;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Resources\ServiceResource;
+use Illuminate\Support\Facades\Log;
 
 class ServicesApiController extends Controller
 {

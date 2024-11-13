@@ -66,7 +66,7 @@
                                                     <a href="/services">Overview</a>
                                                 </li>
                                                 <li>
-                                                    <a href="/services">Categories</a>
+                                                    <a href="/categories">Categories</a>
                                                 </li>
                                                 <li>
                                                     <a href="/services">Services</a>

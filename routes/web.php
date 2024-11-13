@@ -28,6 +28,14 @@ Route::get('/services', function () {
     return view('services');
 })->middleware('auth');
 
+Route::get('/categories', function () {
+    // return ['Laravel' => app()->version()];
+    return view('categories');
+})->middleware('auth');
+
+Route::post('/add-category',[App\Http\Controllers\CategoryApiController::class, 'store']);
+Route::post('/delete-category',[App\Http\Controllers\CategoryApiController::class, 'destroy']);
+
 Route::get('/transactions', function () {
     // return ['Laravel' => app()->version()];
     return view('transactions');

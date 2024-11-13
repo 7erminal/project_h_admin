@@ -11,6 +11,22 @@ export type Service = {
     category_description: string
 }
 
+export type Category = {
+    service_id: number
+    service_name: string
+    description: string
+    active: string
+    service_category_description_ENGLISH: string
+    service_category_description_FRENCH: string
+    service_category_description_PORTUGAL: string
+    service_category_description_SPANISH: string
+    service_category_name_ENGLISH: string
+    service_category_name_FRENCH: string
+    service_category_name_PORTUGAL: string
+    service_category_name_SPANISH: string
+    service_icon: string
+}
+
 export type Requests = {
     request_id: number
     choice: string
