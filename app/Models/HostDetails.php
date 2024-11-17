@@ -9,5 +9,5 @@ class HostDetails extends Model
 {
     use HasFactory;
 
-    protected $table = 'project_h_core_hostDetails';
+    protected $table = 'project_h_core_hostdetails';
 }
