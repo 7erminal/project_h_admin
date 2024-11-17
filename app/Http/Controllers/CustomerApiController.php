@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Customer;
+use App\Models\CustomerDetails;
 use Illuminate\Http\Request;
 use App\Http\Resources\ServiceResource;
+use Illuminate\Support\Facades\Log;
 
 class CustomerApiController extends Controller
 {
@@ -46,6 +48,31 @@ class CustomerApiController extends Controller
     public function update(Request $request, Customer $customer)
     {
         //
+        Log::info("Request received");
+        Log::info($request->first_name);
+        Log::info($request->id);
+        $firstName = $request->first_name;
+        $lastName = $request->last_name;
+        $username = $request->username;
+        $email = $request->email;
+        $mobileNumber = $request->mobile_number;
+        $address = $request->address;
+        $location = $request->location;
+        $deliveryLocation = $request->delivery_location;
+
+        $data = ['first_name'=>$firstName, 'last_name'=>$lastName, 'username'=>$username, 'email'=>$email];
+
+        $data2 = ['address'=>$address, 'mobile_number'=>$mobileNumber, 'location'=>$location, 'delivery_location'=>$deliveryLocation];
+
+        Customer::where(['id'=>$request->id])->update($data);
+        CustomerDetails::where(['user_id'=>$request->id])->update($data2);
+
+        $response = [
+            'success' => true,
+            'data'    => "",
+            'message' => "Success",
+        ];
+        return response()->json($response, 200);
     }
 
     /**

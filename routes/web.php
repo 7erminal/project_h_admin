@@ -18,9 +18,14 @@ Route::get('/', function () {
     return view('index');
 })->middleware('auth');
 
-Route::get('/customers', function () {
+Route::get('/customers-overview', function () {
     // return ['Laravel' => app()->version()];
     return view('customers_overview');
+})->middleware('auth');
+
+Route::get('/customers', function () {
+    // return ['Laravel' => app()->version()];
+    return view('customers');
 })->middleware('auth');
 
 Route::get('/services', function () {

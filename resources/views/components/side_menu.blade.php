@@ -41,7 +41,7 @@
                                             </a>
                                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                                 <li>
-                                                    <a href="/customers">Overview</a>
+                                                    <a href="/customers-overview">Overview</a>
                                                 </li>
                                                 <li>
                                                     <a href="/customers">Customers</a>

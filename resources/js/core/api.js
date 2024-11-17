@@ -2,7 +2,7 @@ import axios from 'axios'
 // import cookie from "react-cookies";
 
 var hosturl = 'https://admin.ayekooo.com';
-// var hosturl = 'http://localhost:8001';
+// var hosturl = 'http://localhost:8000';
 
 class Api{
     async getAllHosts () {
@@ -65,6 +65,31 @@ class Api{
         return response.data
        
 	}
+
+    // Update customer
+	async updateCustomer(params, id){
+        console.log("Update customer details")
+        console.log(params)
+
+        const config = {
+            method: 'put',
+            url: `${hosturl}/api/customers/${id}`,
+            // data: formData,
+            data: params,
+            // params: { firstName: params.firstname, lastName: params.lastname, age: params.age, height: params.height, weight: params.weight, race: params.race, bloodType: params.bloodType, allergies: params.allergies, chronicIllnessStatus: params.chronicIllnessStatus, medicalCondition: params.medicalCondition, status: params.status, treatmentDate: params.treatmentDate }
+            headers: {
+                // 'X-CSRFTOKEN': $('meta[name="csrf-token"]').attr('content'),
+                // "Authorization": 'Bearer '+ $('meta[name="csrf-token"]').attr('content'),
+                // 'X-CSRFTOKEN': cookie.load("csrftoken"),
+                // "Access-Control-Allow-Origin":"*",
+                // "accept": 'application/json',
+            }
+        }
+
+        const res = await axios(config);
+
+        return await res
+    }
 
     // Get Categories
 

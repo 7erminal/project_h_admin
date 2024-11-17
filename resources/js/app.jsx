@@ -17,6 +17,7 @@ import './components/services_overview_slabs';
 import './components/services_hosted_chart';
 import './components/services_requested_chart';
 import './components/services_table';
+import './components/CustomersTable';
 
 import { createRoot } from 'react-dom/client';
 import { createInertiaApp } from '@inertiajs/react';

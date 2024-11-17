@@ -78,3 +78,40 @@ export type Customers = {
     is_verified: number
     created_at: Date
 }
+
+export type Customer = {
+    ID_number: string
+    ID_type_id: number
+    active: number | undefined
+    address: string
+    customer_id: number
+    customer_number: string
+    datePrivacyPolicy: string | undefined
+    dateTermsAndConditions: string | undefined
+    dateJoined: string
+    delivery_location: string | undefined
+    dob: string | undefined
+    created_at: string
+    email: string
+    first_name: string
+    gender: string
+    id: number
+    id_image: string | undefined
+    is_active: number | undefined
+    is_host: number | undefined
+    is_staff: number | undefined
+    is_superuser: number | undefined
+    is_verified: number | undefined
+    language_id: number | undefined
+    last_login: string | undefined
+    last_name: string | undefined
+    location: string | undefined
+    mobile_number: string | undefined 
+    nationality: string | undefined
+    other_names: string | undefined
+    picture: string | undefined | null
+    password_status: number | undefined
+    profession: string | undefined
+    username: string | undefined
+    updated_at: string | undefined
+}
